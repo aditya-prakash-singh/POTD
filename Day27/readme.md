@@ -1,45 +1,44 @@
-# Vowel and Consonant Substrings!
+# Convert to Palindrome
+
 
 Problem Description
- 
-Given a string A consisting of lowercase characters.
 
-You have to find the number of substrings in A which starts with vowel and end with consonants or vice-versa.
+Given a string A consisting only of lowercase characters, we need to check whether it is possible to make this string a palindrome after removing exactly one character from this.
 
-Return the count of substring modulo 109 + 7.
+If it is possible then return 1 else return 0.
 
 
 
 Problem Constraints
-1 <= |A| <= 105
+3 <= |A| <= 105
 
-A consists only of lower-case characters.
+ A[i] is always a lowercase character.
 
 
 
 Input Format
-First argument is an string A.
+First and only argument is an string A.
 
 
 
 Output Format
-Return a integer denoting the the number of substrings in A which starts with vowel and end with consonants or vice-versa with modulo 109 + 7.
+Return 1 if it is possible to convert A to palindrome by removing exactly one character else return 0.
 
 
 
 Example Input
 Input 1:
 
- A = "aba"
+ A = "abcba"
 Input 2:
 
- A = "a"
+ A = "abecbea"
 
 
 Example Output
 Output 1:
 
- 2
+ 1
 Output 2:
 
  0
@@ -48,7 +47,9 @@ Output 2:
 Example Explanation
 Explanation 1:
 
- Substrings of S are : [a, ab, aba, b, ba, a]Out of these only 'ab' and 'ba' satisfy the condition for special Substring. So the answer is 2.
+ We can remove character ‘c’ to make string palindrome
 Explanation 2:
+
+ It is not possible to make this string palindrome just by removing one character 
 
  No possible substring that start with vowel and end with consonant or vice-versa.
