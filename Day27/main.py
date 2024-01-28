@@ -2,20 +2,18 @@ class Solution:
     # @param A : string
     # @return an integer
     def solve(self, A):
-        v=['a','e','i','o','u','A','E','I','O','U']
-        a,b,c,d,ans,l=[],[],0,0,0,len(A)
-        for i in range(l-1,-1,-1):
-            if A[i] in v:
-                c+=1
-            else:
-                d+=1
-            a.append(c)
-            b.append(d)
-        a=a[::-1]
-        b=b[::-1]
-        for i in range(l):
-            if A[i] in v:
-                ans+=b[i]
-            else:
-                ans+=a[i]
-        return(ans%1000000007)
+        def check(a, s, e):
+            while s < e:
+                if a[s] != a[e]:
+                    return 0
+                s += 1
+                e -= 1
+            return 1
+        s = 0
+        e = len(A) - 1
+        while s < e:
+            if A[s] != A[e]:
+                return check(A, s + 1, e) or check(A, s, e - 1)
+            s += 1
+            e -= 1
+        return 1
