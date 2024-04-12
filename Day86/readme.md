@@ -1,7 +1,6 @@
 # Rotate Matrix
 
 
-
 Problem Description
  
  
@@ -68,3 +67,4 @@ Explanation 1:
 Explanation 2:
 
  2D array remains the ssame as there is only element.
+
