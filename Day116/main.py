@@ -1,30 +1,13 @@
-from typing import List
-
-
 class Solution:
-    
-    mod = 10**9 + 7
-
-    def solve(self, i, sum, arr):
-        if i == 0:
-            if sum == 0:
-                return 1
-            return 0
-
-        ans = self.solve(i - 1, sum, arr)
-
-        if sum >= arr[i - 1]:
-            ans = (ans + self.solve(i - 1, sum - arr[i - 1], arr)) % self.mod
-
-        return ans
-        
-    def countPartitions(self, n, d, arr):
-        # Code here
-        totalSum = sum(arr)
-
-        if totalSum < d or (totalSum - d) % 2 != 0:
-            return 0
-
-        target = (totalSum - d) // 2
-
-        return self.solve(n, target, arr)
+    #Your task is to complete this function
+    #Function should return an integer
+    #a - list/array containing height of stack's respectively
+    def max_Books(self, n, k, arr):
+        curr,ans=0,0
+        for item in arr:
+            if item<=k:
+                curr+=item
+            else:
+                ans=max(ans,curr)
+                curr=0
+        return max(ans,curr)
