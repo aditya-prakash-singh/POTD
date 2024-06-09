@@ -1,7 +1,10 @@
+from typing import List
 class Solution:
-    def findExtra(self,n,a,b):
-        xor = 0
-        for i in range(len(b)):
-            xor = xor ^ a[i] ^ b[i]
-        xor = xor^a[-1]
-        return a.index(xor)
+    def zigZag(self, n : int, arr : List[int]) -> None:
+        for i in range(n-1):
+            if i%2==0:
+                if(arr[i]>arr[i+1]):
+                    (arr[i],arr[i+1])=(arr[i+1],arr[i])
+            else:
+                if(arr[i]<arr[i+1]):
+                    (arr[i],arr[i+1])=(arr[i+1],arr[i])
